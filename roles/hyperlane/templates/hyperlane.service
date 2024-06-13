@@ -1,0 +1,15 @@
+[Unit]
+Description=hyperlane {{ chain }}
+After=network-online.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/.{{ chain }}
+EnvironmentFile=/home/ubuntu/.{{ chain }}/.env
+ExecStart=/home/ubuntu/.{{ chain }}/hyperlane_validator --metrics-port 9092
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target

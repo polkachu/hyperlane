@@ -1,0 +1,12 @@
+{
+  "originChainName": "test",
+  "validator": {
+    "type": "aws"
+  },
+  "checkpointsyncer": {
+    "type": "s3"
+  },
+  "chains": {
+    "test": {}
+  }
+}

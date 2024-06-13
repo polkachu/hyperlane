@@ -1,0 +1,6 @@
+---
+- name: Deployment hyperlane
+  hosts: '{{ target }}'
+  gather_facts: false
+  roles:
+    - hyperlane
