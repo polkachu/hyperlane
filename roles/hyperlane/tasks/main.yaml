@@ -1,44 +1,52 @@
 ---
-# - name: Create main directory
-#   file:
-#     path: '{{ user_directory }}/.{{chain}}'
-#     state: directory
-#     mode: '0755'
+- name: Create main directory
+  file:
+    path: '{{ user_directory }}/.{{chain}}'
+    state: directory
+    mode: '0755'
 
-# - name: Create config
-#   file:
-#     path: '{{ user_directory }}/.{{chain}}/config'
-#     state: directory
-#     mode: '0755'
+- name: Create config directory
+  file:
+    path: '{{ user_directory }}/.{{chain}}/config'
+    state: directory
+    mode: '0755'
 
-# - name: Copy agent config file
-#   copy:
-#     src: '{{ chain }}.json'
-#     dest: '{{ user_directory }}/.{{chain}}/config/agent-config.json'
-#     mode: '0664'
+- name: Copy binary
+  copy:
+    remote_src: true
+    src: '{{ user_directory }}/hyperlane-monorepo/rust/target/release/validator'
+    dest: '{{ user_directory }}/.{{chain}}/hyperlane_validator'
+    mode: '0775'
 
-# - name: Make env file
-#   template:
-#     src: 'env.txt'
-#     dest: '{{ user_directory }}/.{{chain}}/.env'
-#     mode: '0664'
+- name: Copy agent config file
+  copy:
+    src: '{{ chain }}.json'
+    dest: '{{ user_directory }}/.{{chain}}/config/agent-config.json'
+    mode: '0664'
 
-# - name: Make service file
-#   become: true
-#   template:
-#     src: 'hyperlane.service'
-#     dest: '/etc/systemd/system/{{ chain }}.service'
-#     owner: root
-#     group: root
-#     mode: '0644'
+- name: Compile env file
+  template:
+    src: 'env.txt'
+    dest: '{{ user_directory }}/.{{chain}}/.env'
+    mode: '0664'
 
-- name: Everyone loves a good Chuck Norris joke
-  uri:
-    url: 'https://raw.githubusercontent.com/polkachu/cosmos-port-prefixes/main/networks.json'
-    method: GET
-    return_content: yes
-    status_code: 200
-  register: results
+- name: Compile service file
+  become: true
+  template:
+    src: 'hyperlane.service'
+    dest: '/etc/systemd/system/{{ chain }}.service'
+    owner: root
+    group: root
+    mode: '0644'
 
-- debug:
-    var: results.content
+- name: start service
+  become: true
+  systemd:
+    name: '{{ chain }}'
+    state: restarted
+    daemon_reload: yes
+    enabled: yes
+
+- name: additional actions needed
+  debug:
+    msg: 'Please edit the .env file and replace those TBD fields and then restart the service'

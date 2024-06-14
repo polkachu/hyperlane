@@ -26,7 +26,7 @@
       },
       "grpcUrls": [
         {
-          "http": "https://osmosis-grpc.publicnode.com:443"
+          "http": "http://osmosis-grpc.polkachu.com:12590"
         }
       ],
       "index": {
@@ -39,7 +39,7 @@
       "protocol": "cosmos",
       "rpcUrls": [
         {
-          "http": "https://osmosis-rpc.publicnode.com:443"
+          "http": "https://osmosis-rpc.polkachu.com"
         }
       ],
       "validatorAnnounce": "0xaf867da5b09a20ee49161d57f99477c0c42d100f34eb53da0d2eb7fc6c257235"

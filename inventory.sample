@@ -1,0 +1,10 @@
+[hyperlane]
+hyperlane_test ansible_host=10.0.0.1 chain=osmosis port_prefix=100
+
+[all:vars]
+ansible_user=ubuntu
+ansible_port=22
+aws_region='us-west-2'
+validator_brand='polkachu'
+ansible_ssh_private_key_file="~/.ssh/id_rsa"
+user_directory='/home/{{ ansible_user }}'
