@@ -34,7 +34,7 @@
       },
       "grpcUrls": [
         {
-          "http": "http://grpc-kralum.neutron-1.neutron.org:80"
+          "http": "http://neutron-grpc.polkachu.com:12590"
         }
       ],
       "index": {
@@ -55,12 +55,12 @@
       "protocol": "cosmos",
       "restUrls": [
         {
-          "http": "https://rest-lb.neutron.org"
+          "http": "https://neutron-api.polkachu.com"
         }
       ],
       "rpcUrls": [
         {
-          "http": "https://rpc-kralum.neutron-1.neutron.org"
+          "http": "https://neutron-rpc.polkachu.com"
         }
       ],
       "signer": {
