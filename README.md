@@ -5,6 +5,13 @@
 1. Opinionated deployment design
 1. Extendable to all hyperlane deployments, including the ones from the team and from the community
 
+## Supported Chains
+
+1. Forma
+1. Neutron
+1. Osmosis
+1. Stride
+
 ## Step-By-Step Setup
 
 First, copy the sample inventory file to your own inventory file so you can customize it to suit your needs:
