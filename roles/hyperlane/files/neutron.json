@@ -34,7 +34,7 @@
       },
       "grpcUrls": [
         {
-          "http": "http://neutron-grpc.polkachu.com:12590"
+          "http": "http://neutron-grpc.polkachu.com:19190"
         }
       ],
       "index": {
