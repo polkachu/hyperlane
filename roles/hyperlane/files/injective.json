@@ -1,0 +1,66 @@
+{
+  "originChainName": "injective",
+  "validator": {
+    "type": "aws"
+  },
+  "checkpointsyncer": {
+    "type": "s3"
+  },
+  "chains": {
+    "injective": {
+      "signer": {
+        "type": "cosmosKey",
+        "prefix": "inj"
+      },
+      "bech32Prefix": "inj",
+      "blockExplorers": [],
+      "blocks": {
+        "confirmations": 1,
+        "estimateBlockTime": 1,
+        "reorgPeriod": 10
+      },
+      "canonicalAsset": "inj",
+      "chainId": "injective-1",
+      "contractAddressBytes": 20,
+      "displayName": "Injective",
+      "domainId": 6909546,
+      "gasCurrencyCoinGeckoId": "injective-protocol",
+      "gasPrice": {
+        "amount": "700000000",
+        "denom": "inj"
+      },
+      "grpcUrls": [
+        {
+          "http": "http://injective-grpc.polkachu.com:14390"
+        }
+      ],
+      "index": {
+        "chunk": 5,
+        "from": 58419500
+      },
+      "interchainGasPaymaster": "0x27ae52298e5b53b34b7ae0ca63e05845c31e1f59",
+      "mailbox": "0x0f7fb53961d70687e352aa55cb329ca76edc0c19",
+      "merkleTreeHook": "0x568ad3638447f07def384969f4ea39fae3802962",
+      "name": "injective",
+      "nativeToken": {
+        "decimals": 18,
+        "denom": "inj",
+        "name": "Injective",
+        "symbol": "INJ"
+      },
+      "protocol": "cosmos",
+      "restUrls": [
+        {
+          "http": "https://sentry.lcd.injective.network:443"
+        }
+      ],
+      "rpcUrls": [
+        {
+          "http": "https://sentry.tm.injective.network:443"
+        }
+      ],
+      "slip44": 118,
+      "validatorAnnounce": "0x1fb225b2fcfbe75e614a1d627de97ff372242eed"
+    }
+  }
+}

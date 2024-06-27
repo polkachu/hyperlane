@@ -8,6 +8,7 @@
 ## Supported Chains
 
 1. Forma
+1. Injective
 1. Neutron
 1. Osmosis
 1. Stride
