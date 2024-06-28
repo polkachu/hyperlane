@@ -11,7 +11,9 @@
 1. Injective
 1. Neutron
 1. Osmosis
+1. Sei
 1. Stride
+1. Zetachain
 
 ## Step-By-Step Setup
 
