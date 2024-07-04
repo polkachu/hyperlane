@@ -58,7 +58,7 @@
       "protocol": "cosmos",
       "restUrls": [
         {
-          "http": "https://osmosis-rest.publicnode.com"
+          "http": "https://osmosis-api.polkachu.com"
         }
       ],
       "rpcUrls": [
